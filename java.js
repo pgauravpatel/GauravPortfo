@@ -1,4 +1,41 @@
 $(document).ready(function(){
+    $('#contact-form').on('submit', function(e) {
+        e.preventDefault(); // Prevent the default form submission
+        $('.button-area button').text('Sending..')
+        // Collect the form data
+        var name = $('#name').val();
+        var email = $('#email').val();
+        var subject = $('#subject').val();
+        var message = $('#message').val();
+
+        // Send the email using EmailJS
+        emailjs.send('service_u5zzg2a', 'template_nw5zgoc', {
+            from_name: name,
+            from_email: email,
+            subject: subject,
+            message: message
+        })
+        .then(function(response) {
+            console.log('Email sent successfully!', response.status, response.text);
+            $('#contact-form')[0].reset();
+            // alert('Your message has been sent successfully!');
+            $.toast({
+                heading: 'Success',
+                text: 'Your message has been sent successfully!',
+                showHideTransition: 'slide',
+                icon: 'success',
+                position : 'top-right',
+                bgColor : 'white',              
+                textColor : 'crimson', 
+            })
+            $('.button-area button').text('Send message')
+        }, function(error) {
+            console.log('Failed to send email.', error);
+            alert('Failed to send your message. Please try again later.');
+        });
+
+    });
+
     $(window).scroll(function(){
         // sticky navbar on scroll script
         if(this.scrollY > 100){

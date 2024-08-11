@@ -166,7 +166,7 @@ section .title::after{
     display: grid;
     grid-template-columns: repeat(2,1fr);
     grid-gap: 11px;
-    background: url("bimage.jpg") no-repeat center;
+    background: url("asset/bimage.jpg") no-repeat center;
     height: 100vh;
     color: #fff;
     min-height: 500px;
@@ -200,7 +200,7 @@ section .title::after{
     margin: 5px 0;
 }
 .home .home-content .text-3 span{
-    color: rgb(59, 3, 14);
+    color: crimson;
     font-weight: 500;
 }
 .home .home-content a{
@@ -212,7 +212,7 @@ section .title::after{
     margin-top: 20px;
     font-weight: 400;
     border-radius: 8px;
-    border: 5px solid rgb(237, 99, 14);
+    border: 5px solid rgb(219, 211, 211);
     transition: all 0.3s ease;
 }
 .home .home-content a:hover{
@@ -282,6 +282,10 @@ section .title::after{
     background: rgb(104, 99, 99);
     content: "what i provide";
 }
+.services .serv-content{
+    justify-content: center;
+    gap: 60px;
+}
 .services .serv-content .card{
     width: calc(49% - 20px);
     background: rgb(104, 99, 99);
@@ -290,7 +294,8 @@ section .title::after{
     padding: 50px 25px;
     cursor: pointer;
     transition: all 0.3s ease;
-    height: 252.6px;
+    /* height: 252.6px; */
+    display: inline-block;
 }
 .services .serv-content .card:hover{
     background: rgb(36, 31, 32);
@@ -377,6 +382,12 @@ section .title::after{
     top: 0;
     background: crimson;
 }
+.skills .skills-content .left img{
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 6px;
+}
 .skills-content .right .python::before{
     width: 60%;
 }
@@ -401,6 +412,12 @@ section .title::after{
 .skills-content .right .sql::before{
     width: 60%;
 }
+.skills .skills-content .right .info .skill-icon {
+    width: 40px; 
+    height: 40px;
+    object-fit: contain;
+    margin-left: 15px; 
+}
 
 /* teams section styling */
 .teams .title::after{
@@ -418,7 +435,7 @@ section .title::after{
 
 /* contact section styling */
 .contact{
-    background-color: #d4f0d6;
+    background-color: #939496;
 }
 .contact .title::after{
     content: "get in touch";
@@ -601,7 +618,7 @@ footer span a:hover{
         flex: 100%;
     }
     .services .serv-content .card{
-        width: calc(50% - 10px);
+        width: 80%;
         margin-bottom: 20px;
     }
     .skills .skills-content .column,
@@ -631,6 +648,9 @@ footer span a:hover{
     }
     .home .home-content a{
         font-size: 20px;
+    }
+    .services .serv-content{
+        gap: 1.5rem;
     }
     .services .serv-content .card{
         width: 100%;
